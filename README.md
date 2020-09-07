@@ -13,6 +13,7 @@ In this repository, we implement Unified Transformer for IWSLT and WMT dataset. 
 git clone https://github.com/pytorch/fairseq
 cd fairseq
 pip install --editable ./
+git checkout 803c0a6d11fcca6dcff8b8d0a4170338b15b26ff 
 ```
 * git clone this repository and you will have the four files 
     * dualformer.py 
