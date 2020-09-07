@@ -2,7 +2,7 @@
 ![](https://i.imgur.com/67luDQW.png)
 
 # Introduction 
-In this repository, we implement Unified Transformer for IWSLT and WMT dataset. Unified transformer is a unified bidirectional model not only focuses on learning the joint probability in two sequential domain mapping but also the integrating of domain knowledge and domain mapping. Our model build a more complete learning scheme that exploits the information from given data.
+In this repository, we implement Unified Transformer for IWSLT and WMT dataset. Unified transformer is a unified bidirectional model not only focuses on learning the joint probability in two sequential domain mapping but also the integrating of domain knowledge and domain mapping. Our model builds a more complete learning scheme that exploits the information from given data.
 
 # Requirements and Installation
 
