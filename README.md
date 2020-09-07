@@ -14,10 +14,11 @@ git clone https://github.com/pytorch/fairseq
 cd fairseq
 pip install --editable ./
 ```
-* git clone this repository and you will have the three files 
+* git clone this repository and you will have the four files 
     * dualformer.py 
     * dualformer_layer.py
     * label_smoothed_cross_entropy.py
+    * fairseq_encoder.py
 * Put the three files in the corresponding path in fairseq package 
 
 ```bash
@@ -36,6 +37,7 @@ fairseq/
         ├── label_smoothed_cross_entropy.py 
     ├── models/
         ├── dualformer.py     
+        ├── fairseq_encoder.py
     ├── modules/
         ├── dualformer_layer.py
 ```
@@ -111,7 +113,7 @@ Comparing with standard transformer and other dual learning methods
 | Unified transformer  |     | v   | 0.0001 |      | 31.5        |
 | Unified transformer  |     | v   | 0.0005 |      | 31.54       |
 | Unified transformer  |     |    |        |      | 31.35       |
-| Transformer |     |     |        |      |      | 30.08       |
+| Transformer |     |     |        |       | 30.08       |
 
 
 | Model | BLEU(De-En) |
