@@ -20,6 +20,7 @@ git checkout 803c0a6d11fcca6dcff8b8d0a4170338b15b26ff
     * dualformer_layer.py
     * label_smoothed_cross_entropy.py
     * fairseq_encoder.py
+    * __init__.py
 * Put the three files in the corresponding path in fairseq package 
 
 ```bash
@@ -41,6 +42,7 @@ fairseq/
         ├── fairseq_encoder.py
     ├── modules/
         ├── dualformer_layer.py
+        ├── __init__.py
 ```
 # Getting Started
 ## IWSLT De-En
