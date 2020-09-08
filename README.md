@@ -15,7 +15,7 @@ cd fairseq
 pip install --editable ./
 git checkout 803c0a6d11fcca6dcff8b8d0a4170338b15b26ff 
 ```
-* git clone this repository and you will have the four files 
+* git clone this repository and you will have the five files 
     * dualformer.py 
     * dualformer_layer.py
     * label_smoothed_cross_entropy.py
