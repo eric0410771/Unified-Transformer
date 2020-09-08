@@ -237,7 +237,7 @@ class LabelSmoothedCrossEntropyCriterion(FairseqCriterion):
         for i, w in enumerate(self.dict):
             self.i2w[i] = w
         
-    def forward(self, model, sample, dual = True, mlm = True, attention = False, cross_attention = True, consistency = False , reduce=True, test_lm = False, model2 = None):
+    def forward(self, model, sample, dual = True, mlm = True, attention = False, cross_attention = False, consistency = True , reduce=True, test_lm = False, model2 = None):
         """Compute the loss for the given sample
         Returns a tuple with three elements:
         1) the loss
@@ -253,11 +253,13 @@ class LabelSmoothedCrossEntropyCriterion(FairseqCriterion):
         con_loss = 0 
         future_loss = 0
         files = os.listdir('.')
+        '''
         with open("ids.pickle", "rb") as f, open("result.pickle", "rb") as f2:
             ids = pickle.load(f)
             result = pickle.load(f2)
         trans_result = result["trans_result"]
         dual_result = result["dual_result"]
+        '''
         def draw_attention_map(attention_maps, attention_maps2, sample_tokens, predict_sample_tokens, predict_sample_tokens2, mask, mlm_prob, prob, layer_index = 1):
             ## the shape of attention_maps is layer, batch size , length, length,
             length = 0
