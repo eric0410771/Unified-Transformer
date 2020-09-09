@@ -66,29 +66,21 @@ fairseq-preprocess --source-lang de --target-lang en \
 ### Train new De-En translation model
 The default argument for all the hyperparameters are provided as following.
 ```bash
-fairseq-train data-bin/iwslt14.tokenized.de-en/ \   
-      --arch dualformer_wmt_en_de \
-      --optimizer adam \
-      --adam-betas '(0.9, 0.98)' \ 
-      --clip-norm 0.0 \
-      --lr-scheduler inverse_sqrt \
-      --warmup-init-lr 1e-07 \
-      --warmup-updates 4000 \       
-      --lr 0.0014 \
-      --min-lr 1e-09 \             
-      --criterion label_smoothed_cross_entropy \
-      --label-smoothing 0.1 \
-      --weight-decay 0.0 \           
-      --max-tokens  4506 \
-      --save-dir checkpoints_en_de_dualformer_iwslt_test/ \
-      --update-freq 6 \ 
-      --log-format json \
-      --log-interval 50 \           
-      --save-interval-updates  1000 \
-      --keep-interval-updates 20 \
-      --dropout 0.1 \
-      --max-epoch 35 \
-      --fp16 
+fairseq-train \
+    data-bin/iwslt14.tokenized.de-en \
+    --arch dualformer_wmt_en_de  \
+    --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
+    --lr 0.0014 --lr-scheduler inverse_sqrt --warmup-updates 4000 \
+    --min-lr 1e-09 --warmup-init-lr 1e-07\
+    --dropout 0.1 --weight-decay 0.0 \
+    --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
+    --save-interval-updates  1000 \
+    --keep-interval-updates 20 \
+    --max-tokens 4506 \
+    --update-freq 6 \
+    --log-format json \
+    --log-interval 50 \
+    --max-epoch 35 --fp16 
 ```
 ## Evaluate well-trained model
 ```bash
