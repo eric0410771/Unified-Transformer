@@ -84,7 +84,7 @@ fairseq-train \
 ```
 ## Evaluate well-trained model
 ```bash
-fairseq-generate data-bin/wmt17_en_de/ \
+fairseq-generate data-bin/iwslt14.tokenized.de-en/ \
                 --path checkpoints_en_de_dualformer_iwslt/checkpoint_last.pt \
                 --lenpen 0.6 \
                 --beam 4 \
