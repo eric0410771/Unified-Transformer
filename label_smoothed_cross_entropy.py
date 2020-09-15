@@ -237,7 +237,7 @@ class LabelSmoothedCrossEntropyCriterion(FairseqCriterion):
         for i, w in enumerate(self.dict):
             self.i2w[i] = w
         
-    def forward(self, model, sample, dual = True, mlm = True, attention = False, cross_attention = False, consistency = True , reduce=True, test_lm = False, model2 = None):
+    def forward(self, model, sample, dual = True, mlm = True, attention = False, cross_attention = False, consistency = False , reduce=True, test_lm = False, model2 = None):
         """Compute the loss for the given sample
         Returns a tuple with three elements:
         1) the loss
@@ -416,7 +416,7 @@ class LabelSmoothedCrossEntropyCriterion(FairseqCriterion):
         
         if dual:
             if mlm:
-                return (mlm_loss), sample_size, logging_output
+                return (mlm_loss + trans_loss + future_loss), sample_size, logging_output
                 #return 0 * (trans_loss), sample_size, logging_output
             else:
                 return trans_loss, sample_size, logging_output
